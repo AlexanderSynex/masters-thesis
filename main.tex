@@ -1,0 +1,38 @@
+\documentclass[12pt,a4paper]{report} % преамбула документа
+\usepackage[left=3.0cm, right=1.5cm, top=2.0cm, bottom=2.0cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english, russian]{babel}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{subfiles}
+\usepackage{csquotes}
+\usepackage[backend=biber,
+            bibencoding=utf8]{biblatex} % https://qna.habr.com/q/484967
+
+\begin{document}
+
+\title{Выпускная магистерская работа}
+
+\section{Титульный лист}
+\subfile{sections/title}
+
+\tableofcontents
+
+\section{Реферат}
+\subfile{sections/referat}
+
+\section{Содержание}
+\subfile{sections/introduction}
+
+\section{Основная часть}
+\subfile{sections/content}
+
+\section{Заключение}
+\subfile{sections/closure}
+
+\section{Список литературы}
+\subfile{sections/literature}
+
+\end{document}
+
