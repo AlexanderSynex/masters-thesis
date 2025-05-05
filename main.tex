@@ -1,29 +1,97 @@
-\documentclass[12pt,a4paper]{report} % преамбула документа
+%% Преамбула TeX-файла
 
-\input{settings/settings.sty}
+% 1. Стиль и язык
+\documentclass[utf8x, 14pt]{G7-32} % Стиль (по умолчанию будет 14pt)
+
+% Остальные стандартные настройки убраны в preamble.inc.tex.
+% \include{preamble.inc}
+
+% Настройки листингов.
+%\ifPDFTeX
+%\include{listings.inc}
+%\else
+%\usepackage{local-minted}
+%\fi
+
+% Доп определения
+
+\usepackage{pgfplots}
+% \usepackage{subcaption}
+
+
+\pgfplotsset{compat=newest} % <-- optional in preamble
+
+\definecolor{m_blue}{rgb}{0, 0.4470, 0.7410}
+\definecolor{m_red}{rgb}{0.8500, 0.3250, 0.0980}
+\definecolor{m_yellow}{rgb}{0.9290, 0.6940, 0.1250}
+\definecolor{m_purple}{rgb}{0.4940, 0.1840, 0.5560}
+\definecolor{m_green}{rgb}{0.4660, 0.6740, 0.1880}
+\definecolor{m_cyan}{rgb}{0.3010, 0.7450, 0.9330}
+
+\usetikzlibrary{backgrounds,automata}
+
+% Полезные макросы листингов.
+%\include{macros.inc}
+% Стиль титульного листа и заголовки
+% \include{00-title}
+
 
 \begin{document}
 
-\title{Выпускная магистерская работа}
+\frontmatter % выключает нумерацию ВСЕГО; здесь начинаются ненумерованные главы: реферат, введение, глоссарий, сокращения и прочее.
 
-\input{sections/title.tex}
+\maketitle %создает титульную страницу
+
+
+
+
+
+%\listoffigures                         % Список рисунков
+
+%\listoftables                          % Список таблиц
+
+%\NormRefs % Нормативные ссылки
+% Команды \breakingbeforechapters и \nonbreakingbeforechapters
+% управляют разрывом страницы перед главами.
+% По-умолчанию страница разрывается.
+
+% \nobreakingbeforechapters
+% \breakingbeforechapters
+
+\include{sections/title}
 
 \tableofcontents
 
-\section{Реферат}
-\input{sections/referat.tex}
+\printnomenclature % Автоматический список сокращений
 
-\section{Содержание}
-\input{sections/introduction.tex}
+\include{sections/abstract}
 
-\section{Основная часть}
-\input{sections/content.tex}
+\mainmatter % это включает нумерацию глав и секций в документе ниже
 
-\section{Заключение}
-\input{sections/closure.tex}
+%\include{20-analysis}
+%\include{30-design}
+\include{sections/content}
+%\include{50-research}
+% \include{60-economics}
+% \include{70-bzd}
 
-\section{Список литературы}
-\input{sections/literature.tex}
+\backmatter %% Здесь заканчивается нумерованная часть документа и начинаются ссылки и
+
+\include{sections/closure}%% заключение
+
+
+\include{sections/literature}
+
+
+% \appendix   % Тут идут приложения
+%
+% \include{90-appendix1}
+%
+% \include{91-appendix2}
 
 \end{document}
 
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
