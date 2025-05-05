@@ -1,38 +1,29 @@
 \documentclass[12pt,a4paper]{report} % преамбула документа
-\usepackage[left=3.0cm, right=1.5cm, top=2.0cm, bottom=2.0cm]{geometry}
-\usepackage[utf8]{inputenc}
-\usepackage[T2A]{fontenc}
-\usepackage[english, russian]{babel}
-\usepackage{amsmath,amsfonts,amssymb}
-\usepackage{graphicx}
-\usepackage{subfiles}
-\usepackage{csquotes}
-\usepackage[backend=biber,
-            bibencoding=utf8]{biblatex} % https://qna.habr.com/q/484967
+
+\input{settings/settings.sty}
 
 \begin{document}
 
 \title{Выпускная магистерская работа}
 
-\section{Титульный лист}
-\subfile{sections/title}
+\input{sections/title.tex}
 
 \tableofcontents
 
 \section{Реферат}
-\subfile{sections/referat}
+\input{sections/referat.tex}
 
 \section{Содержание}
-\subfile{sections/introduction}
+\input{sections/introduction.tex}
 
 \section{Основная часть}
-\subfile{sections/content}
+\input{sections/content.tex}
 
 \section{Заключение}
-\subfile{sections/closure}
+\input{sections/closure.tex}
 
 \section{Список литературы}
-\subfile{sections/literature}
+\input{sections/literature.tex}
 
 \end{document}
 
