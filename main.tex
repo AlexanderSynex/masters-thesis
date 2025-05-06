@@ -2,9 +2,11 @@
 
 \begin{document}
 
+\maketitle %создает титульную страницу
+
 \frontmatter % выключает нумерацию ВСЕГО; здесь начинаются ненумерованные главы: реферат, введение, глоссарий, сокращения и прочее.
 
-\maketitle %создает титульную страницу
+
 
 
 
@@ -22,17 +24,18 @@
 % \nobreakingbeforechapters
 % \breakingbeforechapters
 
-\include{sections/title}
-
-\tableofcontents
+% \include{sections/title}
 
 \include{sections/abstract}
 
-\printnomenclature % Автоматический список сокращений
+\tableofcontents
+
+% \printnomenclature % Автоматический список сокращений
+
+\include{sections/introduction}
 
 \mainmatter % это включает нумерацию глав и секций в документе ниже
 
-\include{sections/introduction}
 
 \include{sections/content}
 
