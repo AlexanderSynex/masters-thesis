@@ -1,16 +1,40 @@
-%\documentclass[utf]{G3-72}
+%% Преамбула TeX-файла
 
-%\usepackage[left=2.0cm, 
-%            right=2.0cm, 
-%            top=2.0cm, 
-%            bottom=2.0cm]{geometry} % Настройка геометрии страницы 
-%\usepackage[utf8]{inputenc} % UTF8 как стандартную кодировку
-%\usepackage[T2A]{fontenc}
-%\usepackage[english, russian]{babel} % Поддержка русских и английских особенностей языка
-%\usepackage{amsmath,amsfonts,amssymb} % Математика
-%\usepackage{graphicx} % Добавление графики в документ
-%\usepackage{subfiles} % Поддержка подфайлов
-%\usepackage{csquotes} 
-%\usepackage[backend=biber,
-%            bibencoding=utf8]{biblatex} % https://qna.habr.com/q/484967 % Составление библиографических списков
-%
+% 1. Стиль и язык
+\documentclass[utf8x, 14pt]{G7-32} % Стиль (по умолчанию будет 14pt)
+
+
+% Остальные стандартные настройки убраны в preamble.inc.tex.
+% \include{preamble.inc}
+
+% Настройки листингов.
+%\ifPDFTeX
+%\include{listings.inc}
+%\else
+%\usepackage{local-minted}
+%\fi
+
+% Доп определения
+
+\usepackage{pgfplots}
+% \usepackage{subcaption}
+
+\pgfplotsset{compat=newest} % <-- optional in preamble
+
+\definecolor{m_blue}{rgb}{0, 0.4470, 0.7410}
+\definecolor{m_red}{rgb}{0.8500, 0.3250, 0.0980}
+\definecolor{m_yellow}{rgb}{0.9290, 0.6940, 0.1250}
+\definecolor{m_purple}{rgb}{0.4940, 0.1840, 0.5560}
+\definecolor{m_green}{rgb}{0.4660, 0.6740, 0.1880}
+\definecolor{m_cyan}{rgb}{0.3010, 0.7450, 0.9330}
+
+\usetikzlibrary{backgrounds,automata}
+
+\usepackage{url}
+
+% Полезные макросы листингов.
+%\include{macros.inc}
+% Стиль титульного листа и заголовки
+% \include{00-title}
+
+

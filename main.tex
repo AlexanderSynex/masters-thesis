@@ -1,40 +1,4 @@
-%% Преамбула TeX-файла
-
-% 1. Стиль и язык
-\documentclass[utf8x, 14pt]{G7-32} % Стиль (по умолчанию будет 14pt)
-
-% Остальные стандартные настройки убраны в preamble.inc.tex.
-% \include{preamble.inc}
-
-% Настройки листингов.
-%\ifPDFTeX
-%\include{listings.inc}
-%\else
-%\usepackage{local-minted}
-%\fi
-
-% Доп определения
-
-\usepackage{pgfplots}
-% \usepackage{subcaption}
-
-
-\pgfplotsset{compat=newest} % <-- optional in preamble
-
-\definecolor{m_blue}{rgb}{0, 0.4470, 0.7410}
-\definecolor{m_red}{rgb}{0.8500, 0.3250, 0.0980}
-\definecolor{m_yellow}{rgb}{0.9290, 0.6940, 0.1250}
-\definecolor{m_purple}{rgb}{0.4940, 0.1840, 0.5560}
-\definecolor{m_green}{rgb}{0.4660, 0.6740, 0.1880}
-\definecolor{m_cyan}{rgb}{0.3010, 0.7450, 0.9330}
-
-\usetikzlibrary{backgrounds,automata}
-
-% Полезные макросы листингов.
-%\include{macros.inc}
-% Стиль титульного листа и заголовки
-% \include{00-title}
-
+\input{settings/settings.sty}
 
 \begin{document}
 
@@ -46,9 +10,9 @@
 
 
 
-%\listoffigures                         % Список рисунков
+% \listoffigures                         % Список рисунков
 
-%\listoftables                          % Список таблиц
+% \listoftables                          % Список таблиц
 
 %\NormRefs % Нормативные ссылки
 % Команды \breakingbeforechapters и \nonbreakingbeforechapters
@@ -62,28 +26,24 @@
 
 \tableofcontents
 
-\printnomenclature % Автоматический список сокращений
-
 \include{sections/abstract}
+
+\printnomenclature % Автоматический список сокращений
 
 \mainmatter % это включает нумерацию глав и секций в документе ниже
 
-%\include{20-analysis}
-%\include{30-design}
+\include{sections/introduction}
+
 \include{sections/content}
-%\include{50-research}
-% \include{60-economics}
-% \include{70-bzd}
 
 \backmatter %% Здесь заканчивается нумерованная часть документа и начинаются ссылки и
 
 \include{sections/closure}%% заключение
 
-
 \include{sections/literature}
 
+\appendix   % Тут идут приложения
 
-% \appendix   % Тут идут приложения
 %
 % \include{90-appendix1}
 %
