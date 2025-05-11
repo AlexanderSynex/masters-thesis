@@ -577,20 +577,30 @@ SystemNeuralModel. Любые действия, связанные с идент
 
 %TODO Сделать табличку
 \begin{figure}[H]
-  \begin{center}
-    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
-  \end{center}
-  \caption{Результаты ошибки при обучении и проверки}\label{fig:test:plot:learning}
+  \centering
+  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys1.png}}
+  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys2.png}}
+  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys3.png}}
+  \caption{Результаты ошибки при обучении и проверки\\(a) Пароводяной котел (b) Мазутный насос (c) Нагревательный котел}\label{fig:test:plot:learning}
 \end{figure}
 
-Как можно видеть, обучение каждой их нейронных прошло успешно. Проверка работы каждой подсистемы над воспроизведением всей подсистемы также показывает, что подлсистемы успешно обучились воспроизводить внутренние процессы каждого компонента всей системы (см. рис. ниже).
+\begin{figure}[H]
+  \centering
+  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys1_noise.png}}
+  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys2_noise.png}}
+  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys3_noise.png}}
+  \caption{Результаты ошибки автокодировщика при обучении и проверки\\(a) Пароводяной котел (b) Мазутный насос (c) Нагревательный котел}\label{fig:test:plot:learning:encoder}
+\end{figure}
+
+Как можно видеть, обучение каждой из нейронных сетей (полносвязной и автокодирующей) прошло успешно. Проверка работы каждой подсистемы над воспроизведением всей подсистемы также показывает, что подлсистемы успешно обучились воспроизводить внутренние процессы каждого компонента всей системы (см. рис. ниже).
 
 %TODO: Табличка с графиками подсистем
 \begin{figure}[H]
-  \begin{center}
-    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
-  \end{center}
-  \caption{Воспроизведение работы подсистем идентификационных нейронных моделей}\label{fig:test:plot:subsystems}
+  \centering
+  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys1.png}}
+  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys2.png}}
+  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys3.png}}
+  \caption{Воспроизведение работы подсистем идентификационных нейронных моделей\\(a) Пароводяной котел (b) Мазутный насос (c) Нагревательный котел}\label{fig:test:plot:subsystems}
 \end{figure}
 
 Также, произведем общее моделирование с учетом передачи сигналов между сетями. 
