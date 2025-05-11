@@ -506,4 +506,101 @@ SystemNeuralModel. Любые действия, связанные с идент
 \section{Оценка работы}
 %TODO: Произвести оценку моделирования системы
 
-Определим конфигурацию системы, состоящую из трех подсистем
+Для оценки работы предлагаемого метода, произведем идентификацию и моделирование на сегрегированной модели, на базе компонентов энергетического объекта ГМ-50. 
+
+\begin{table}[H]
+\caption{Описание компонентов подсистем моделирования}\label{tab:subsystems}
+\begin{tabular}{|p{0.25\textwidth}|p{0.34\textwidth}|p{0.34\textwidth}|}
+    \hline
+    Подсистема  & Входы & Выходы \\
+    \hline 
+    Пароводяной котел & Расход мазута в котёл;  & Давление воды в котёл; \\
+                      & Температура мазута к котлу. & Давление перегретого пара от котла. \\
+    \hline 
+    Мазутный насос    & Давление мазута на котел & Уровень мазута в резервуаре \\
+    \hline
+    Нагревательный котел & Давление воды в котёл; & Температура мазута в резервуаре средняя;\\
+                         & Давление перегретого пара от котла; & Давление пара от котла ($log$).\\
+                         & Уровень мазута в резервуаре. & \\
+    \hline
+\end{tabular}
+\end{table}
+
+Описание каждой подсистемы приведено в таблице \ref{tab:subsystems}. Структурную схему экспериментальной установки можно видеть на рисунке ниже. 
+
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
+  \end{center}
+  \caption{Структурная схема экспериментальной установки}\label{fig:subsystem_diagram}
+\end{figure}
+
+%TODO
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
+  \end{center}
+  \caption{Загруженные данные о работе системы}\label{fig:test:loaded_data}
+\end{figure}
+
+Загрузив данные о работе системы (см. рис. \ref{fig:test:loaded_data}), определим конфигурацию системы, в частности названия, а также список входов и выходов на вкладке конфигурации (см. рис. ниже).
+
+%TODO
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
+  \end{center}
+  \caption{Сконфигурированная экспериметнальная система}\label{fig:test:configured_system}
+\end{figure}
+
+Проверить корректность конфигуарции можно во вкладке обзора и моделирования (см. рис. ниже). 
+
+%TODO
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
+  \end{center}
+  \caption{Вид экспериметнальной системы в окне просмотра}\label{fig:test:preview}
+\end{figure}
+
+Запустим обучение для каждой подсистемы на 20 эпохах в окне обучения (см. рис. ниже). 
+
+%TODO
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
+  \end{center}
+  \caption{Экспериментнальная конфигурация идентификационных моделей}\label{fig:test:neural_form}
+\end{figure}
+
+Обученние моделей происходит в соответствии с алгоритмом, описанном в технической часть. Результаты обучения и валидации нейронных сетей можно видеть на рисунке \ref{fig:test:plot:learning}.
+
+%TODO Сделать табличку
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
+  \end{center}
+  \caption{Результаты ошибки при обучении и проверки}\label{fig:test:plot:learning}
+\end{figure}
+
+Как можно видеть, обучение каждой их нейронных прошло успешно. Проверка работы каждой подсистемы над воспроизведением всей подсистемы также показывает, что подлсистемы успешно обучились воспроизводить внутренние процессы каждого компонента всей системы (см. рис. ниже).
+
+%TODO: Табличка с графиками подсистем
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
+  \end{center}
+  \caption{Воспроизведение работы подсистем идентификационных нейронных моделей}\label{fig:test:plot:subsystems}
+\end{figure}
+
+Также, произведем общее моделирование с учетом передачи сигналов между сетями. 
+
+%TODO: Табличка с графиками подсистем
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
+  \end{center}
+  \caption{Воспроизведение работы целой системы идентификационных нейронных моделей}\label{fig:test:plot:system}
+\end{figure}
+
+Из графика полученного сигнала при моделировании с использованием обученнй модели (см. рис. \ref{fig:test:plot:system}) можно видеть, что предложенный метод воспроизводит динамику системы с большой точностью, а также с должной точностью воспроизводит значения сигналов.
