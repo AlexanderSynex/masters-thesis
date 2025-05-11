@@ -538,7 +538,7 @@ SystemNeuralModel. Любые действия, связанные с идент
 %TODO
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
+    \includegraphics[width=0.95\textwidth]{figures/modules/loader.png}
   \end{center}
   \caption{Загруженные данные о работе системы}\label{fig:test:loaded_data}
 \end{figure}
@@ -548,7 +548,7 @@ SystemNeuralModel. Любые действия, связанные с идент
 %TODO
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
+    \includegraphics[width=0.95\textwidth]{figures/modules/editor.png}
   \end{center}
   \caption{Сконфигурированная экспериметнальная система}\label{fig:test:configured_system}
 \end{figure}
@@ -558,7 +558,7 @@ SystemNeuralModel. Любые действия, связанные с идент
 %TODO
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
+    \includegraphics[width=0.95\textwidth]{figures/modules/modelling.png}
   \end{center}
   \caption{Вид экспериметнальной системы в окне просмотра}\label{fig:test:preview}
 \end{figure}
@@ -589,7 +589,8 @@ SystemNeuralModel. Любые действия, связанные с идент
   \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys1_noise.png}}
   \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys2_noise.png}}
   \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys3_noise.png}}
-  \caption{Результаты ошибки автокодировщика при обучении и проверки\\(a) Пароводяной котел (b) Мазутный насос (c) Нагревательный котел}\label{fig:test:plot:learning:encoder}
+  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/all_noise.png}}
+  \caption{Результаты ошибки автокодировщика при обучении и проверки\\(a) Пароводяной котел (b) Мазутный насос (c) Нагревательный котел (d) Все системы}\label{fig:test:plot:learning:encoder}
 \end{figure}
 
 Как можно видеть, обучение каждой из нейронных сетей (полносвязной и автокодирующей) прошло успешно. Проверка работы каждой подсистемы над воспроизведением всей подсистемы также показывает, что подлсистемы успешно обучились воспроизводить внутренние процессы каждого компонента всей системы (см. рис. ниже).
@@ -597,9 +598,9 @@ SystemNeuralModel. Любые действия, связанные с идент
 %TODO: Табличка с графиками подсистем
 \begin{figure}[H]
   \centering
-  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys1.png}}
-  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys2.png}}
-  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys3.png}}
+  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys1_res.png}}
+  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys2_res.png}}
+  \subfigure[]{\includegraphics[width=0.49\textwidth]{figures/test/sys3_res.png}}
   \caption{Воспроизведение работы подсистем идентификационных нейронных моделей\\(a) Пароводяной котел (b) Мазутный насос (c) Нагревательный котел}\label{fig:test:plot:subsystems}
 \end{figure}
 
@@ -608,7 +609,7 @@ SystemNeuralModel. Любые действия, связанные с идент
 %TODO: Табличка с графиками подсистем
 \begin{figure}[H]
   \begin{center}
-    \includegraphics[width=0.95\textwidth]{figures/subsystem_diagram.png}
+    \includegraphics[width=0.95\textwidth]{figures/test/all_res.png}
   \end{center}
   \caption{Воспроизведение работы целой системы идентификационных нейронных моделей}\label{fig:test:plot:system}
 \end{figure}
