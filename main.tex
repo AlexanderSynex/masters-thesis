@@ -2,15 +2,9 @@
 
 \begin{document}
 
-\maketitle %создает титульную страницу
+% \maketitle %создает титульную страницу
 
 \frontmatter % выключает нумерацию ВСЕГО; здесь начинаются ненумерованные главы: реферат, введение, глоссарий, сокращения и прочее.
-
-
-
-
-
-
 
 % \listoffigures                         % Список рисунков
 
@@ -25,6 +19,8 @@
 % \breakingbeforechapters
 
 % \include{sections/title}
+
+\includepdf[pages=-]{pdfs/vkr_task.pdf}
 
 \include{sections/abstract}
 
@@ -48,7 +44,7 @@
 \appendix   % Тут идут приложения
 
 %
-% \include{90-appendix1}
+\include{sections/appendix}
 %
 % \include{91-appendix2}
 
