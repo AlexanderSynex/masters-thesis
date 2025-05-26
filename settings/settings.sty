@@ -12,9 +12,21 @@
 %\ifPDFTeX
 %\include{listings.inc}
 %\else
-%\usepackage{local-minted}
+% \usepackage{local-minted}
 %\fi
-
+\usepackage{listings}
+\lstset{
+    basicstyle=\ttfamily\footnotesize,
+    breaklines=true, % Enable line breaks
+    frame=single, % Add frame around code
+    numbers=none, % Line numbers
+    tabsize=4, % Tab size
+    showstringspaces=false, % Don't mark spaces in strings
+    language=python,
+    frame=none,                  % No frame around the code!
+    columns=fullflexible         % Better line-breaking
+}
+\renewcommand{\lstlistingname}{Листинг}
 % Доп определения
 \usepackage{pdfpages}
 \usepackage{pgfplots}

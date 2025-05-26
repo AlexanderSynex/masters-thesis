@@ -1,11 +1,10 @@
 \chapter{}
 
 \section*{Код системного модуля}
-% \blindtext
-% \label{cha:appendix1}
+% \blindtext \label{cha:appendix1}
 
 
-\begin{verbatim}
+\begin{lstlisting}
 import tensorflow as tf
 import keras
 from keras import layers
@@ -153,18 +152,6 @@ class System(object):
         for name in Outputs:
             self.add_output(name)
     
-        
-    def print(self):
-        print(f"system: {self.name}")
-        print(f"weight={self.weight}")
-        print(f"Inputs:")
-        for i, link in enumerate(self.__Inputs):
-            print(f"{i + 1}:\t{link} weight={ConnectionManager().get_instance(link).weight}")
-        print(f"Outputs:")
-        for i, link in enumerate(self.__Outputs):
-            print(f"{i + 1}:\t{link} weight={ConnectionManager().get_instance(link).weight}")
-        print(f"{self.__model.model=}")
-        
     def fit(self, epochs=100):
         self.model_wrapper.fit(input_keys  = self.__Inputs, 
                                output_keys = self.__Outputs,
@@ -257,7 +244,6 @@ class SystemManager(metaclass=Singleton):
         name = system.name
         if name not in cls._systems:
             cls._systems[name] = system
-        system.print()
     
     def __get(cls, name):
         if name not in cls._systems:
@@ -448,12 +434,6 @@ class Singleton(type):
     def add_to_system(self, name):
         self.__to_systems.add(name)
         
-        
-    def print(self):
-        print(f"Link: {self.__name}\n",
-              f"\tValue={self.__value}\n",
-              f"\tFrom: {self.__from_system}\n",
-              f"\tTo: {self.__to_systems}")from ..Singleton import Singleton
 from .Connection import Connection
 from .ConnectionManager import ConnectionManager
 
@@ -588,6 +568,6 @@ class ConnectionManager(metaclass=Singleton):
     
     def exists(cls, name):
         return cls.__get(name) != None
-\end{verbatim}
+\end{lstlisting}
 
 
