@@ -46,6 +46,32 @@
 
 \usepackage[hyphens]{url}
 \urlstyle{same}
+
+
+
+\usepackage{etoolbox}
+\makeatletter
+
+% ===== REMOVES DOT AFTER BIBTEX NUMBERS =====
+\patchcmd{\@bibitem}{.}{ }{}{} % Removes dot in standard classes
+\patchcmd{\NAT@bibitemnum}{.}{ }{}{} % Removes dot in natbib
+\renewcommand{\@biblabel}[1]{#1} % Forces plain number format
+
+% ===== FIX FOR REVETEX/OTHER CLASSES (if needed) =====
+\@ifclassloaded{revtex4-1}{%
+    \patchcmd{\NAT@bibitemnum}{.}{ }{}{}%
+    \patchcmd{\bibitem}{.}{ }{}{}%
+}{}
+
+\makeatother
+
+
+
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\NAT@bibitemnum}{.}{ }{}{} % Removes dot after number in \bibitem
+% \makeatother
+
 % Полезные макросы листингов.
 %\include{macros.inc}
 % Стиль титульного листа и заголовки

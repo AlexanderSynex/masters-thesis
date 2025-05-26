@@ -20,15 +20,18 @@
 
 
 % \include{sections/title}
-
+\pagestyle{empty}
 \includepdf[pages=-]{pdfs/title.pdf}
 \includepdf[pages=-]{pdfs/vkr_task.pdf}
 
+\setcounter{page}{3}
 \include{sections/abstract}
 
 \tableofcontents
 
 % \printnomenclature % Автоматический список сокращений
+
+\pagestyle{plain}
 
 \include{sections/introduction}
 
@@ -45,7 +48,7 @@
 \appendix   % Тут идут приложения
 
 %
-\include{sections/appendix}
+% \include{sections/appendix}
 %
 % \include{91-appendix2}
 

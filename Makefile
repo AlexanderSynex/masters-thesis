@@ -21,3 +21,5 @@ clean:
 	find . -name "*.log" -exec rm {} \;
 	find . -name "*.lof" -exec rm {} \;
 	find . -name "*.nlo" -exec rm {} \;
+	find . -name "*.blg" -exec rm {} \;
+
